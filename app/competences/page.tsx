@@ -7,7 +7,18 @@ const listCompetences = competences
       <h2 className="card-title">{competence.Name}</h2>
       <img src={`assets/${competence.Picture}`} />
       <div className="card-body">
-        <p>Poziom: {competence.Level}</p>
+        <p
+          style={{
+            color:
+              competence.Level < 3
+                ? "red"
+                : competence.Level === 3
+                  ? "black"
+                  : "green",
+          }}
+        >
+          Poziom: {competence.Level}
+        </p>
         {competence.Description && <p>Opis: {competence.Description}</p>}
       </div>
     </div>
